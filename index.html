@@ -627,6 +627,16 @@
       footer { padding: 24px 16px; }
     }
 
+    /* ─── MORE ABOUT ME GRID ─── */
+    @media (max-width: 1024px) {
+      .about-me-grid { grid-template-columns: 1fr 1fr !important; }
+      .about-me-grid > div:last-child { grid-column: span 2; height: 300px !important; margin-top: 0 !important; }
+    }
+    @media (max-width: 700px) {
+      .about-me-grid { grid-template-columns: 1fr !important; }
+      .about-me-grid > div { height: 300px !important; margin-top: 0 !important; grid-column: span 1 !important; }
+    }
+
     /* page sections visibility */
     .page-section { display: none; }
     .page-section.active { display: block; }
@@ -867,6 +877,31 @@
     </div>
   </section>
 
+  <!-- More About Me section -->
+  <section style="padding:100px 72px; background:var(--cream);">
+    <div style="max-width:1100px; margin:0 auto;">
+      <p class="section-label reveal" style="justify-content:center; text-align:center;">More About Me</p>
+      <h2 class="section-title reveal reveal-delay-1" style="text-align:center; margin-bottom:16px;">The person <em>behind the brush.</em></h2>
+      <p class="section-body reveal reveal-delay-2" style="text-align:center; margin:0 auto 56px; max-width:640px;">
+        I'm Le-Ann Kurten — a passionate nail technician based in Standerton. My love for nail art goes beyond technique; it's about creating something that makes each client feel truly seen and beautiful. Here's a little glimpse into who I am.
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;" class="reveal reveal-delay-3 about-me-grid">
+        <div style="border-radius:4px; overflow:hidden; position:relative; height:420px;">
+          <img src="WhatsApp Image 2026-04-13 at 7.57.50 PM.jpeg" alt="Le-Ann Kurten" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div style="border-radius:4px; overflow:hidden; position:relative; height:420px; margin-top:32px;">
+          <img src="WhatsApp Image 2026-04-13 at 7.57.50 PM (1).jpeg" alt="Le-Ann Kurten" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div style="border-radius:4px; overflow:hidden; position:relative; height:420px;">
+          <img src="WhatsApp Image 2026-04-13 at 7.58.57 PM.jpeg" alt="Le-Ann Kurten" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:48px;" class="reveal reveal-delay-4">
+        <a href="https://fresha.com/p/le-ann-kurtenleann80-gmail-com-6273021" target="_blank" class="btn-primary">Book an Appointment</a>
+      </div>
+    </div>
+  </section>
+
   <!-- USP strip -->
   <section style="background:var(--ink); padding:80px 72px; text-align:center;">
     <p class="section-label reveal" style="justify-content:center; color:var(--mauve)">Our Promise</p>
@@ -912,9 +947,9 @@
       </div>
 
       <div class="service-card">
-        <span class="service-icon" style="font-size:1.1rem; letter-spacing:0.05em; font-family:'Cormorant Garamond',serif; color:var(--mauve); font-weight:300;">— ·</span>
-        <div class="service-name">Minimal Design</div>
-        <div class="service-desc">Clean, restrained accents for a refined, understated look. Less is more — a single line, dot, or fine detail that elevates without overpowering.</div>
+        <span class="service-icon">🌸</span>
+        <div class="service-name">Minnow Design</div>
+        <div class="service-desc">Delicate accent art on select nails — the perfect balance between subtle and statement.</div>
         <span class="service-badge">Gel Overlay</span>
       </div>
 
@@ -940,7 +975,7 @@
       </div>
 
       <div class="service-card">
-        <span class="service-icon">🫧</span>
+        <span class="service-icon">🌿</span>
         <div class="service-name">Nail Care</div>
         <div class="service-desc">Full nail prep and polish — cuticle care, shaping, and a pristine polish application for naturally healthy nails.</div>
         <span class="service-badge">Care</span>
@@ -1047,7 +1082,7 @@
         <div class="portfolio-img-slot">
           <img src="04-minnow-design.jpeg" alt="Minnow Design" style="width:100%;height:100%;object-fit:cover;" />
         </div>
-        <div class="portfolio-overlay"><p>Minimal Design</p></div>
+        <div class="portfolio-overlay"><p>Minnow Design</p></div>
       </div>
       <div class="portfolio-item">
         <div class="portfolio-img-slot">
@@ -1128,39 +1163,61 @@
     <div style="margin-bottom:56px;">
       <p class="section-label reveal">Appointments</p>
       <h2 class="section-title reveal reveal-delay-1">Book your <em>visit</em></h2>
-      <p class="section-body reveal reveal-delay-2" style="margin-top:16px;">Booking is quick and easy through our online scheduling page. Choose your service, pick a time that works for you, and confirm your appointment — all in one place.</p>
     </div>
     <div class="booking-inner">
-      <div class="reveal">
-        <!-- Fresha Booking CTA -->
-        <div style="background:var(--ink); border-radius:2px; padding:48px 40px; display:flex; flex-direction:column; gap:24px; position:relative; overflow:hidden;">
-          <div style="position:absolute;top:0;right:0;width:220px;height:220px;background:radial-gradient(circle,rgba(169,150,158,0.18) 0%,transparent 70%);pointer-events:none;"></div>
-          <p style="font-size:0.65rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--mauve); font-weight:400; display:flex; align-items:center; gap:10px;">
-            <span style="display:block;width:20px;height:1px;background:var(--mauve);"></span>Online Booking
-          </p>
-          <h3 style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,3.5vw,2.8rem); color:var(--blush); font-weight:400; line-height:1.1;">
-            Ready to treat<br><em style="color:var(--mauve);">your nails?</em>
-          </h3>
-          <p style="font-size:0.88rem; color:rgba(255,245,250,0.55); line-height:1.85; font-weight:300; max-width:420px;">
-            Click the button below to be taken to our booking page on Fresha — where you can browse available services, select your preferred date and time, and secure your appointment instantly.
-          </p>
-          <div style="display:flex; flex-direction:column; gap:12px; margin-top:8px;">
-            <a href="https://fresha.com/p/le-ann-kurtenleann80-gmail-com-6273021" target="_blank" class="btn-light" style="align-self:flex-start; display:inline-flex; align-items:center; gap:10px;">
-              Book an Appointment &nbsp;↗
-            </a>
-            <p style="font-size:0.7rem; color:rgba(255,245,250,0.3); letter-spacing:0.08em;">You'll be redirected to Fresha to complete your booking.</p>
+      <div>
+        <form class="booking-form reveal" onsubmit="handleBooking(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Your first name" required />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Your last name" required />
+            </div>
           </div>
-        </div>
-
-        <!-- Quick contact note -->
-        <div style="margin-top:20px; padding:20px 24px; background:var(--bone); border-radius:2px; border-left:2px solid var(--mauve);">
-          <p style="font-size:0.82rem; color:var(--soft-ink); font-weight:300; line-height:1.7;">
-            Prefer to book via WhatsApp or have a question first?
-            <a href="https://wa.me/27699980309" target="_blank" style="color:var(--mauve); text-decoration:none; font-weight:400;"> Message us directly →</a>
-          </p>
-        </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label>WhatsApp / Phone</label>
+            <input type="tel" placeholder="+27 000 000 0000" required />
+          </div>
+          <div class="form-group">
+            <label>Service Requested</label>
+            <select required>
+              <option value="">Select a service</option>
+              <option>Builder Gel (Gel Colour Overlay)</option>
+              <option>Full Design (Gel Overlay)</option>
+              <option>Minnow Design (Gel Overlay)</option>
+              <option>Solid Colour (Gel Overlay)</option>
+              <option>Soak Off</option>
+              <option>Gel Toes</option>
+              <option>Nail Care (Prep & Polish)</option>
+              <option>Gel Fill & Maintenance</option>
+              <option>Manicure & Pedicure</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Preferred Date</label>
+              <input type="date" required />
+            </div>
+            <div class="form-group">
+              <label>Preferred Time</label>
+              <input type="time" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Design Notes / Inspiration</label>
+            <textarea placeholder="Describe your ideal nail look, or share a reference idea..."></textarea>
+          </div>
+          <p class="form-note">✦ Appointments are confirmed via WhatsApp after submission. A deposit may be required to secure your booking.</p>
+          <button type="submit" class="btn-primary" style="align-self:flex-start">Request Appointment</button>
+        </form>
       </div>
-
       <div class="booking-info reveal reveal-delay-2">
         <div class="booking-info-card">
           <p class="info-card-label">Studio Info</p>
@@ -1179,6 +1236,9 @@
             <a href="tel:+27699980309" class="contact-link">
               <span class="contact-link-icon">📞</span> +27 699 980 309
             </a>
+            <a href="mailto:kurtenleann80@gmail.com" class="contact-link">
+              <span class="contact-link-icon">✉️</span> kurtenleann80@gmail.com
+            </a>
             <a href="https://www.instagram.com/brush_tip_studio" target="_blank" class="contact-link">
               <span class="contact-link-icon">📸</span> @brush_tip_studio
             </a>
@@ -1187,7 +1247,7 @@
         <div class="booking-info-card" style="border-color:var(--mauve)">
           <p class="info-card-label">Important</p>
           <h3 class="info-card-title">Booking Policy</h3>
-          <p class="info-card-body">A <strong>non-refundable deposit (30–50%)</strong> is required to confirm your appointment. Cancellations with less than 24 hours notice will forfeit the deposit. Please arrive on time.</p>
+          <p class="info-card-body">A <strong>50% deposit</strong> is required to confirm your appointment. Cancellations with less than 24 hours notice may forfeit the deposit. Please arrive on time.</p>
           <a href="#" onclick="showPage('policies')" style="font-size:0.75rem; color:var(--mauve); text-decoration:none; display:inline-block; margin-top:10px; letter-spacing:0.1em">View Full Client Policies →</a>
         </div>
       </div>
@@ -1209,53 +1269,48 @@
     <div class="policies-grid reveal reveal-delay-3">
       <div class="policy-card">
         <span class="policy-icon">📅</span>
-        <div class="policy-title">Bookings & Appointments</div>
-        <p class="policy-body">All appointments must be booked in advance. Please arrive on time. A <strong>20–30 minute late arrival</strong> may result in a shortened service or cancellation at our discretion.</p>
-      </div>
-      <div class="policy-card">
-        <span class="policy-icon">💳</span>
-        <div class="policy-title">Deposits & Payments</div>
-        <p class="policy-body">A <strong>non-refundable deposit of 30–50%</strong> is required to secure your booking. Deposits go toward your final total. Full payment is due immediately after your appointment. We accept EFT, cash, or mobile payment.</p>
-      </div>
-      <div class="policy-card">
-        <span class="policy-icon">🔄</span>
-        <div class="policy-title">Cancellations & Rescheduling</div>
-        <p class="policy-body"><strong>24 hours' notice</strong> is required for any cancellations or changes. Late cancellations result in loss of deposit. One reschedule is allowed if done within the correct timeframe.</p>
+        <div class="policy-title">Booking & Deposits</div>
+        <p class="policy-body">All appointments must be booked in advance. A <strong>50% non-refundable deposit</strong> is required to secure your slot. Bookings without a deposit are not confirmed. We recommend booking at least 48 hours in advance.</p>
       </div>
       <div class="policy-card">
         <span class="policy-icon">⏰</span>
-        <div class="policy-title">Late Arrivals</div>
-        <p class="policy-body">Arriving <strong>20–30 minutes late</strong> may result in cancellation of your appointment. Service time may be reduced to avoid delays for other clients. Your deposit may be forfeited.</p>
+        <div class="policy-title">Cancellations & No-Shows</div>
+        <p class="policy-body">Cancellations must be made at least <strong>24 hours before</strong> your appointment. Late cancellations or no-shows will forfeit the deposit. Repeated no-shows may result in being unable to rebook.</p>
+      </div>
+      <div class="policy-card">
+        <span class="policy-icon">🕐</span>
+        <div class="policy-title">Punctuality</div>
+        <p class="policy-body">Please arrive on time for your appointment. A grace period of <strong>10 minutes</strong> is allowed. After 10 minutes, the appointment may be cancelled and the deposit forfeited, as late arrivals affect other clients.</p>
       </div>
       <div class="policy-card">
         <span class="policy-icon">🏥</span>
-        <div class="policy-title">Hygiene & Safety</div>
-        <p class="policy-body">All tools are thoroughly sanitized between clients. No services will be performed on infected or damaged nails. Brush Tip Studio reserves the right to refuse service if necessary to protect client and technician health.</p>
+        <div class="policy-title">Health & Hygiene</div>
+        <p class="policy-body">If you have any skin conditions, infections, or nail disorders on or around your nails, please inform us before your appointment. We reserve the right to decline service to protect client and technician health.</p>
       </div>
       <div class="policy-card">
         <span class="policy-icon">👧</span>
-        <div class="policy-title">Guests</div>
-        <p class="policy-body">No extra guests are permitted unless arranged beforehand. Our home studio is designed to be calm, focused, and comfortable for each individual client.</p>
-      </div>
-      <div class="policy-card">
-        <span class="policy-icon">🏡</span>
-        <div class="policy-title">Home Salon Notice</div>
-        <p class="policy-body">Brush Tip Studio is a <strong>home-based salon</strong>. Pets may be present. Please inform us of any allergies beforehand so we can ensure a comfortable experience for you.</p>
+        <div class="policy-title">Children & Guests</div>
+        <p class="policy-body">As a home-based studio, we kindly ask that you not bring children or additional guests to your appointment unless pre-arranged. Our space is designed to be calm and focused.</p>
       </div>
       <div class="policy-card">
         <span class="policy-icon">🔁</span>
-        <div class="policy-title">Repairs & Fixes</div>
-        <p class="policy-body"><strong>Free fixes within 3 days</strong> for workmanship-related issues only. No free repairs will be provided for client-caused damage. Please contact us promptly within this window.</p>
+        <div class="policy-title">Repairs & Complaints</div>
+        <p class="policy-body"><strong>Free repairs</strong> are offered within <strong>5 days</strong> of your appointment for any breakages (excluding damage caused by misuse). Please contact us within this window. After 5 days, repairs are charged.</p>
+      </div>
+      <div class="policy-card">
+        <span class="policy-icon">💳</span>
+        <div class="policy-title">Payment</div>
+        <p class="policy-body">We accept EFT, cash, and selected payment apps. Full payment is due at the end of your appointment. Deposits are deducted from the final total. Prices are subject to change without notice.</p>
       </div>
       <div class="policy-card">
         <span class="policy-icon">📸</span>
-        <div class="policy-title">Social Media</div>
-        <p class="policy-body">Nail photos and videos may be taken for content purposes. Please let us know if you prefer not to be posted — we will always respect your privacy and never post without permission.</p>
+        <div class="policy-title">Photography</div>
+        <p class="policy-body">We may photograph completed nail sets for our portfolio and social media. Please inform us if you do not consent to your nails being photographed. We will never post identifiable personal photos without consent.</p>
       </div>
       <div class="policy-card">
-        <span class="policy-icon">💬</span>
-        <div class="policy-title">Communication</div>
-        <p class="policy-body">Replies will be sent during business hours only. Please allow adequate time for responses. We appreciate your patience and will get back to you as soon as possible.</p>
+        <span class="policy-icon">✋</span>
+        <div class="policy-title">Respectful Conduct</div>
+        <p class="policy-body">We ask all clients to treat our space and technician with respect. We reserve the right to refuse service to anyone who is rude, disruptive, or disrespectful. Your comfort — and ours — matters.</p>
       </div>
     </div>
   </section>
@@ -1280,9 +1335,9 @@
       <h3>4. Data Retention</h3>
       <p>Your data is retained for as long as necessary to provide our services and for legal compliance. You may request deletion of your data at any time by contacting us.</p>
       <h3>5. Your Rights</h3>
-      <p>Under POPIA (Protection of Personal Information Act), you have the right to access, correct, or request the deletion of your personal data. Contact us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7bca2a5a3b2b9bbb2b6b9b9efe797b0bab6bebbf9b4b8ba">[email&#160;protected]</a> to exercise these rights.</p>
+      <p>Under POPIA (Protection of Personal Information Act), you have the right to access, correct, or request the deletion of your personal data. Contact us at kurtenleann80@gmail.com to exercise these rights.</p>
       <h3>6. Contact</h3>
-      <p>For privacy-related queries: <a href="/cdn-cgi/l/email-protection#600b151214050e0c05010e0e585020070d01090c4e030f0d" style="color:var(--mauve)"><span class="__cf_email__" data-cfemail="701b050204151e1c15111e1e484030171d11191c5e131f1d">[email&#160;protected]</span></a></p>
+      <p>For privacy-related queries: <a href="mailto:kurtenleann80@gmail.com" style="color:var(--mauve)">kurtenleann80@gmail.com</a></p>
       <hr class="legal-divider" />
 
       <h2>Terms of Service</h2>
@@ -1301,7 +1356,7 @@
       <h3>6. Governing Law</h3>
       <p>These terms are governed by the laws of the Republic of South Africa.</p>
       <h3>7. Contact</h3>
-      <p>For queries: <a href="/cdn-cgi/l/email-protection#9cf7e9eee8f9f2f0f9fdf2f2a4acdcfbf1fdf5f0b2fff3f1" style="color:var(--mauve)"><span class="__cf_email__" data-cfemail="b0dbc5c2c4d5dedcd5d1dede8880f0d7ddd1d9dc9ed3dfdd">[email&#160;protected]</span></a></p>
+      <p>For queries: <a href="mailto:kurtenleann80@gmail.com" style="color:var(--mauve)">kurtenleann80@gmail.com</a></p>
     </div>
   </div>
 </div><!-- end policies -->
@@ -1330,7 +1385,7 @@
           <div class="contact-detail-icon">✉️</div>
           <div>
             <p class="contact-detail-label">Email</p>
-            <p class="contact-detail-value"><a href="/cdn-cgi/l/email-protection#0f647a7d7b6a61636a6e6161373f4f68626e6663216c6062"><span class="__cf_email__" data-cfemail="3259474046575c5e57535c5c0a0272555f535b5e1c515d5f">[email&#160;protected]</span></a></p>
+            <p class="contact-detail-value"><a href="mailto:kurtenleann80@gmail.com">kurtenleann80@gmail.com</a></p>
           </div>
         </div>
         <div class="contact-detail-item">
@@ -1351,7 +1406,7 @@
       <div class="contact-social reveal reveal-delay-4">
         <a href="https://www.instagram.com/brush_tip_studio" target="_blank" class="social-btn" title="Instagram">📸</a>
         <a href="https://wa.me/27699980309" target="_blank" class="social-btn" title="WhatsApp">💬</a>
-        <a href="/cdn-cgi/l/email-protection#dab1afa8aebfb4b6bfbbb4b4e2ea9abdb7bbb3b6f4b9b5b7" class="social-btn" title="Email">✉️</a>
+        <a href="mailto:kurtenleann80@gmail.com" class="social-btn" title="Email">✉️</a>
       </div>
     </div>
     <div>
@@ -1410,7 +1465,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // ─── NAV SCROLL ───
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
@@ -1456,4 +1511,31 @@
   window.addEventListener('scroll', initReveal);
 
   // ─── FORMS ───
-  function sho
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = '✦ ' + msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3800);
+  }
+  function handleBooking(e) {
+    e.preventDefault();
+    showToast('Booking request received! We\'ll confirm via WhatsApp.');
+    e.target.reset();
+  }
+  function handleContact(e) {
+    e.preventDefault();
+    showToast('Message sent! We\'ll be in touch shortly.');
+    e.target.reset();
+  }
+
+  // ─── IMAGE SLOT HELPERS ───
+  // When you add images, update these paths:
+  // document.getElementById('heroImage').src = 'images/hero.jpg';
+  // document.getElementById('heroImage').style.display = 'block';
+  // document.getElementById('heroPlaceholder').style.display = 'none';
+
+  // ─── INIT ───
+  showPage('home');
+</script>
+</body>
+</html>
