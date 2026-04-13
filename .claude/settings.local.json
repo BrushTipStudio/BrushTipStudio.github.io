@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv \"WhatsApp Image 2026-04-13 at 3.21.10 PM.jpeg\" \"01-custom-full-design.jpeg\")",
+      "Bash(mv \"WhatsApp Image 2026-04-13 at 3.21.11 PM \\(1\\).jpeg\" \"02-builder-gel.jpeg\")",
+      "Bash(mv \"WhatsApp Image 2026-04-13 at 3.21.11 PM \\(2\\).jpeg\" \"03-solid-colour.jpeg\")",
+      "Bash(mv \"WhatsApp Image 2026-04-13 at 3.21.11 PM \\(3\\).jpeg\" \"04-minnow-design.jpeg\")",
+      "Bash(mv \"WhatsApp Image 2026-04-13 at 3.21.11 PM.jpeg\" \"05-gel-toes-main.jpeg\")"
+    ]
+  }
+}
