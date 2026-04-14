@@ -1720,6 +1720,66 @@
       }
     }
 
+    /* ── About Slideshow ── */
+    .about-slideshow {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--ink);
+    }
+    .about-slide {
+      display: none;
+    }
+    .about-slide.active {
+      display: block;
+    }
+    .about-slide img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+    .slide-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.45);
+      color: #fff;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .slide-prev { left: 12px; }
+    .slide-next { right: 12px; }
+    .slide-btn:hover { background: rgba(0,0,0,0.7); }
+    .slide-dots {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+    }
+    .slide-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.45);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .slide-dot.active { background: #fff; }
+    @media (max-width: 700px) {
+      .about-slide img { height: 320px; }
+    }
+
     /* page sections visibility */
     .page-section {
       display: none;
@@ -1755,12 +1815,11 @@
       <span>Nail Artistry</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#" onclick="showPage('home')" data-page="home">Home</a></li>
-      <li><a href="#" onclick="showPage('about')" data-page="about">About</a></li>
-      <li><a href="#" onclick="showPage('services')" data-page="services">Services</a></li>
-      <li><a href="#" onclick="showPage('portfolio')" data-page="portfolio">Portfolio</a></li>
-      <li><a href="#" onclick="showPage('policies')" data-page="policies">Policies</a></li>
-      <li><a href="#" onclick="showPage('contact')" data-page="contact">Contact</a></li>
+      <li><a href="#" onclick="return showPage('home')" data-page="home">Home</a></li>
+      <li><a href="#" onclick="return showPage('about')" data-page="about">About</a></li>
+      <li><a href="#" onclick="return showPage('services')" data-page="services">Services</a></li>
+      <li><a href="#" onclick="return showPage('portfolio')" data-page="portfolio">Portfolio</a></li>
+      <li><a href="#" onclick="return showPage('policies')" data-page="policies">Policies</a></li>
       <li><a href="https://fresha.com/p/le-ann-kurtenleann80-gmail-com-6273021" target="_blank" class="nav-cta"
           data-page="booking">Book Now</a></li>
     </ul>
@@ -1771,12 +1830,11 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#" onclick="showPage('home'); toggleMenu()">Home</a>
-    <a href="#" onclick="showPage('about'); toggleMenu()">About</a>
-    <a href="#" onclick="showPage('services'); toggleMenu()">Services</a>
-    <a href="#" onclick="showPage('portfolio'); toggleMenu()">Portfolio</a>
-    <a href="#" onclick="showPage('policies'); toggleMenu()">Policies</a>
-    <a href="#" onclick="showPage('contact'); toggleMenu()">Contact</a>
+    <a href="#" onclick="showPage('home'); toggleMenu(); return false;">Home</a>
+    <a href="#" onclick="showPage('about'); toggleMenu(); return false;">About</a>
+    <a href="#" onclick="showPage('services'); toggleMenu(); return false;">Services</a>
+    <a href="#" onclick="showPage('portfolio'); toggleMenu(); return false;">Portfolio</a>
+    <a href="#" onclick="showPage('policies'); toggleMenu(); return false;">Policies</a>
     <a href="https://fresha.com/p/le-ann-kurtenleann80-gmail-com-6273021" target="_blank"
       style="color:var(--mauve)">Book Now</a>
   </div>
@@ -2017,19 +2075,22 @@
           technique; it's about creating something that makes each client feel truly seen and beautiful. Here's a little
           glimpse into who I am.
         </p>
-        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;"
-          class="reveal reveal-delay-3 about-me-grid">
-          <div style="border-radius:4px; overflow:hidden; position:relative; height:420px;">
-            <img src="WhatsApp Image 2026-04-13 at 7.57.50 PM.jpeg" alt="Le-Ann Kurten"
-              style="width:100%;height:100%;object-fit:cover;" />
+        <div class="about-slideshow reveal reveal-delay-3">
+          <div class="about-slide active">
+            <img src="WhatsApp Image 2026-04-13 at 7.57.50 PM.jpeg" alt="Le-Ann Kurten" />
           </div>
-          <div style="border-radius:4px; overflow:hidden; position:relative; height:420px; margin-top:32px;">
-            <img src="WhatsApp Image 2026-04-13 at 7.57.50 PM (1).jpeg" alt="Le-Ann Kurten"
-              style="width:100%;height:100%;object-fit:cover;" />
+          <div class="about-slide">
+            <img src="WhatsApp Image 2026-04-13 at 7.57.50 PM (1).jpeg" alt="Le-Ann Kurten" />
           </div>
-          <div style="border-radius:4px; overflow:hidden; position:relative; height:420px;">
-            <img src="WhatsApp Image 2026-04-13 at 7.58.57 PM.jpeg" alt="Le-Ann Kurten"
-              style="width:100%;height:100%;object-fit:cover;" />
+          <div class="about-slide">
+            <img src="WhatsApp Image 2026-04-13 at 7.58.57 PM.jpeg" alt="Le-Ann Kurten" />
+          </div>
+          <button class="slide-btn slide-prev" onclick="moveSlide(-1)" aria-label="Previous">&#8592;</button>
+          <button class="slide-btn slide-next" onclick="moveSlide(1)" aria-label="Next">&#8594;</button>
+          <div class="slide-dots">
+            <span class="slide-dot active" onclick="goToSlide(0)"></span>
+            <span class="slide-dot" onclick="goToSlide(1)"></span>
+            <span class="slide-dot" onclick="goToSlide(2)"></span>
           </div>
         </div>
         <div style="text-align:center; margin-top:48px;" class="reveal reveal-delay-4">
@@ -2462,72 +2523,61 @@
     <div style="height:72px; background:var(--blush);"></div>
     <section style="padding:80px 72px; background:var(--blush);">
       <div>
-        <p class="section-label reveal">Important Information</p>
-        <h2 class="section-title reveal reveal-delay-1">Client <em>policies</em></h2>
-        <p class="section-body reveal reveal-delay-2" style="margin-top:16px">Please read our policies carefully before
+        <p class="section-label">Important Information</p>
+        <h2 class="section-title">Client <em>policies</em></h2>
+        <p class="section-body" style="margin-top:16px">Please read our policies carefully before
           booking. These are in place to ensure a smooth, respectful, and enjoyable experience for everyone.</p>
       </div>
-      <div class="policies-grid reveal reveal-delay-3">
+      <div class="policies-grid">
         <div class="policy-card">
           <span class="policy-icon">📅</span>
-          <div class="policy-title">Booking & Deposits</div>
-          <p class="policy-body">All appointments must be booked in advance. A <strong>50% non-refundable
-              deposit</strong> is required to secure your slot. Bookings without a deposit are not confirmed. We
-            recommend booking at least 48 hours in advance.</p>
-        </div>
-        <div class="policy-card">
-          <span class="policy-icon">⏰</span>
-          <div class="policy-title">Cancellations & No-Shows</div>
-          <p class="policy-body">Cancellations must be made at least <strong>24 hours before</strong> your appointment.
-            Late cancellations or no-shows will forfeit the deposit. Repeated no-shows may result in being unable to
-            rebook.</p>
-        </div>
-        <div class="policy-card">
-          <span class="policy-icon">🕐</span>
-          <div class="policy-title">Punctuality</div>
-          <p class="policy-body">Please arrive on time for your appointment. A grace period of <strong>10
-              minutes</strong> is allowed. After 10 minutes, the appointment may be cancelled and the deposit forfeited,
-            as late arrivals affect other clients.</p>
-        </div>
-        <div class="policy-card">
-          <span class="policy-icon">🏥</span>
-          <div class="policy-title">Health & Hygiene</div>
-          <p class="policy-body">If you have any skin conditions, infections, or nail disorders on or around your nails,
-            please inform us before your appointment. We reserve the right to decline service to protect client and
-            technician health.</p>
-        </div>
-        <div class="policy-card">
-          <span class="policy-icon">👧</span>
-          <div class="policy-title">Children & Guests</div>
-          <p class="policy-body">As a home-based studio, we kindly ask that you not bring children or additional guests
-            to your appointment unless pre-arranged. Our space is designed to be calm and focused.</p>
-        </div>
-        <div class="policy-card">
-          <span class="policy-icon">🔁</span>
-          <div class="policy-title">Repairs & Complaints</div>
-          <p class="policy-body"><strong>Free repairs</strong> are offered within <strong>5 days</strong> of your
-            appointment for any breakages (excluding damage caused by misuse). Please contact us within this window.
-            After 5 days, repairs are charged.</p>
+          <div class="policy-title">Bookings & Appointments</div>
+          <p class="policy-body">All appointments must be booked in advance. Please arrive on time. A 20–30 minute late arrival may result in a shortened service or cancellation.</p>
         </div>
         <div class="policy-card">
           <span class="policy-icon">💳</span>
-          <div class="policy-title">Payment</div>
-          <p class="policy-body">We accept EFT, cash, and selected payment apps. Full payment is due at the end of your
-            appointment. Deposits are deducted from the final total. Prices are subject to change without notice.</p>
+          <div class="policy-title">Deposits & Payments</div>
+          <p class="policy-body">A <strong>non-refundable deposit (30–50%)</strong> is required to secure your booking. Deposits go toward your final total. Final payment is due immediately after your appointment. We accept EFT, cash, or mobile payment.</p>
+        </div>
+        <div class="policy-card">
+          <span class="policy-icon">⏰</span>
+          <div class="policy-title">Cancellations & Rescheduling</div>
+          <p class="policy-body"><strong>24 hours' notice</strong> required for cancellations or changes. Late cancellations result in loss of deposit. One reschedule is allowed if done within the correct timeframe.</p>
+        </div>
+        <div class="policy-card">
+          <span class="policy-icon">🕐</span>
+          <div class="policy-title">Late Arrivals</div>
+          <p class="policy-body">Arriving 20–30 minutes late may result in cancellation. Service time may be reduced to avoid delays for other clients.</p>
+        </div>
+        <div class="policy-card">
+          <span class="policy-icon">🏥</span>
+          <div class="policy-title">Hygiene & Safety</div>
+          <p class="policy-body">All tools are thoroughly sanitized between clients. No services will be performed on infected or damaged nails. Brush Tip Studio reserves the right to refuse service if necessary.</p>
+        </div>
+        <div class="policy-card">
+          <span class="policy-icon">👧</span>
+          <div class="policy-title">Guests</div>
+          <p class="policy-body">No extra guests unless arranged beforehand. Our space is designed to be calm and focused.</p>
+        </div>
+        <div class="policy-card">
+          <span class="policy-icon">🏠</span>
+          <div class="policy-title">Home Salon Notice</div>
+          <p class="policy-body">Brush Tip Studio is a <strong>home-based salon</strong>. Pets may be present. Please inform me of any allergies beforehand.</p>
+        </div>
+        <div class="policy-card">
+          <span class="policy-icon">🔁</span>
+          <div class="policy-title">Repairs & Fixes</div>
+          <p class="policy-body"><strong>Free fixes within 3 days</strong> for workmanship-related issues only. No free repairs for client-caused damage.</p>
         </div>
         <div class="policy-card">
           <span class="policy-icon">📸</span>
-          <div class="policy-title">Photography</div>
-          <p class="policy-body">We may photograph completed nail sets for our portfolio and social media. Please inform
-            us if you do not consent to your nails being photographed. We will never post identifiable personal photos
-            without consent.</p>
+          <div class="policy-title">Social Media</div>
+          <p class="policy-body">Nail photos/videos may be taken for content. Please let me know if you prefer not to be posted.</p>
         </div>
         <div class="policy-card">
-          <span class="policy-icon">✋</span>
-          <div class="policy-title">Respectful Conduct</div>
-          <p class="policy-body">We ask all clients to treat our space and technician with respect. We reserve the right
-            to refuse service to anyone who is rude, disruptive, or disrespectful. Your comfort — and ours — matters.
-          </p>
+          <span class="policy-icon">💬</span>
+          <div class="policy-title">Communication</div>
+          <p class="policy-body">Replies will be during business hours. Please allow time for responses.</p>
         </div>
       </div>
     </section>
@@ -2594,91 +2644,6 @@
   <!-- ══════════════════════════════════
      CONTACT PAGE
 ═══════════════════════════════════ -->
-  <div id="contact" class="page-section">
-    <div style="height:72px; background:var(--ink);"></div>
-    <section
-      style="padding:100px 72px; background:var(--ink); display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;">
-      <div>
-        <p class="section-label reveal" style="color:var(--mauve)">Get in Touch</p>
-        <h2 class="section-title reveal reveal-delay-1" style="color:var(--blush)">Let's talk <em>nails.</em></h2>
-        <p class="section-body reveal reveal-delay-2" style="color:rgba(255,245,250,0.5); margin-top:20px">
-          Have a question? Want to discuss your next nail design? We'd love to hear from you. Reach out via any channel
-          below — we typically respond within a few hours.
-        </p>
-        <div class="contact-details reveal reveal-delay-3">
-          <div class="contact-detail-item">
-            <div class="contact-detail-icon">📞</div>
-            <div>
-              <p class="contact-detail-label">Phone / WhatsApp</p>
-              <p class="contact-detail-value"><a href="tel:+27699980309">+27 699 980 309</a></p>
-            </div>
-          </div>
-          <div class="contact-detail-item">
-            <div class="contact-detail-icon">✉️</div>
-            <div>
-              <p class="contact-detail-label">Email</p>
-              <p class="contact-detail-value"><a href="mailto:kurtenleann80@gmail.com">kurtenleann80@gmail.com</a></p>
-            </div>
-          </div>
-          <div class="contact-detail-item">
-            <div class="contact-detail-icon">📍</div>
-            <div>
-              <p class="contact-detail-label">Location</p>
-              <p class="contact-detail-value">Wellington, Paarl, Mpumalanga<br><span
-                  style="font-size:0.75rem; opacity:0.6">Exact address shared on booking confirmation</span></p>
-            </div>
-          </div>
-          <div class="contact-detail-item" style="border:none; padding-bottom:0">
-            <div class="contact-detail-icon">📸</div>
-            <div>
-              <p class="contact-detail-label">Social</p>
-              <p class="contact-detail-value"><a href="https://www.instagram.com/brush_tip_studio"
-                  target="_blank">@brush_tip_studio</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="contact-social reveal reveal-delay-4">
-          <a href="https://www.instagram.com/brush_tip_studio" target="_blank" class="social-btn"
-            title="Instagram">📸</a>
-          <a href="https://wa.me/27699980309" target="_blank" class="social-btn" title="WhatsApp">💬</a>
-          <a href="mailto:kurtenleann80@gmail.com" class="social-btn" title="Email">✉️</a>
-        </div>
-      </div>
-      <div>
-        <form class="contact-form reveal reveal-delay-2" onsubmit="handleContact(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label>First Name</label>
-              <input type="text" placeholder="Your name" required />
-            </div>
-            <div class="form-group">
-              <label>Last Name</label>
-              <input type="text" placeholder="Your surname" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" placeholder="your@email.com" required />
-          </div>
-          <div class="form-group">
-            <label>Subject</label>
-            <select>
-              <option>General Enquiry</option>
-              <option>Booking Question</option>
-              <option>Pricing</option>
-              <option>Complaint or Feedback</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Message</label>
-            <textarea placeholder="How can we help you?" style="min-height:130px;" required></textarea>
-          </div>
-          <button type="submit" class="btn-light">Send Message</button>
-        </form>
-      </div>
-    </section>
-  </div><!-- end contact -->
 
   <!-- Toast Notification -->
   <div class="toast" id="toast">✦ Message sent! We'll be in touch shortly.</div>
@@ -2696,7 +2661,6 @@
       <a href="#" onclick="showPage('portfolio')">Portfolio</a>
       <a href="https://fresha.com/p/le-ann-kurtenleann80-gmail-com-6273021" target="_blank">Book</a>
       <a href="#" onclick="showPage('policies')">Policies</a>
-      <a href="#" onclick="showPage('contact')">Contact</a>
     </div>
   </footer>
 
@@ -2719,12 +2683,13 @@
       if (target) {
         target.classList.add('active');
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        // force-reveal all elements in the target section
+        target.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
       }
       // update nav active states
       document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
         a.classList.toggle('active', a.dataset.page === pageId);
       });
-      // trigger reveal animations
       setTimeout(initReveal, 100);
       return false;
     }
@@ -2768,6 +2733,24 @@
     // document.getElementById('heroImage').src = 'images/hero.jpg';
     // document.getElementById('heroImage').style.display = 'block';
     // document.getElementById('heroPlaceholder').style.display = 'none';
+
+    // ─── SLIDESHOW ───
+    let slideIndex = 0;
+    function updateSlide() {
+      const slides = document.querySelectorAll('.about-slide');
+      const dots = document.querySelectorAll('.slide-dot');
+      slides.forEach((s, i) => s.classList.toggle('active', i === slideIndex));
+      dots.forEach((d, i) => d.classList.toggle('active', i === slideIndex));
+    }
+    function moveSlide(dir) {
+      const slides = document.querySelectorAll('.about-slide');
+      slideIndex = (slideIndex + dir + slides.length) % slides.length;
+      updateSlide();
+    }
+    function goToSlide(i) {
+      slideIndex = i;
+      updateSlide();
+    }
 
     // ─── INIT ───
     showPage('home');
