@@ -223,6 +223,17 @@
       color: var(--mauve);
     }
 
+    .mobile-policies-link {
+      background: var(--ink);
+      color: var(--blush) !important;
+      padding: 12px 36px;
+      border-radius: 40px;
+      font-size: 1.1rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
     /* ─── SECTIONS COMMON ─── */
     section {
       position: relative;
@@ -1784,8 +1795,7 @@
       display: block;
     }
 
-    #home.active,
-    #contact.active {
+    #home.active {
       display: grid;
     }
 
@@ -1805,7 +1815,7 @@
 
   <!-- Navigation -->
   <nav id="navbar">
-    <a href="#" class="nav-logo" onclick="showPage('home')">
+    <a href="#" class="nav-logo" onclick="return showPage('home')">
       Brush Tip Studio
       <span>Nail Artistry</span>
     </a>
@@ -1825,11 +1835,11 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#" onclick="showPage('home'); toggleMenu(); return false;">Home</a>
-    <a href="#" onclick="showPage('about'); toggleMenu(); return false;">About</a>
-    <a href="#" onclick="showPage('services'); toggleMenu(); return false;">Services</a>
-    <a href="#" onclick="showPage('portfolio'); toggleMenu(); return false;">Portfolio</a>
-    <a href="#" onclick="showPage('policies'); toggleMenu(); return false;">Policies</a>
+    <a href="#" onclick="return showPage('home')">Home</a>
+    <a href="#" onclick="return showPage('about')">About</a>
+    <a href="#" onclick="return showPage('services')">Services</a>
+    <a href="#" onclick="return showPage('portfolio')">Portfolio</a>
+    <a href="#" onclick="return showPage('policies')" class="mobile-policies-link">Policies</a>
     <a href="https://fresha.com/p/le-ann-kurtenleann80-gmail-com-6273021" target="_blank"
       style="color:var(--mauve)">Book Now</a>
   </div>
@@ -2222,50 +2232,6 @@
       </div>
     </section>
 
-    <!-- E-commerce / Shop teaser -->
-    <section style="padding:80px 72px; background:var(--ink);">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
-        <div>
-          <p class="section-label reveal" style="color:var(--mauve)">Coming Soon</p>
-          <h2
-            style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3rem); color:var(--blush); font-weight:400; margin-bottom:20px;"
-            class="reveal reveal-delay-1">
-            Shop our <em>products.</em>
-          </h2>
-          <p style="font-size:0.88rem; color:rgba(255,245,250,0.5); line-height:1.85; font-weight:300; margin-bottom:32px;"
-            class="reveal reveal-delay-2">
-            We're setting up our online shop — soon you'll be able to browse and purchase nail care products, gift
-            vouchers, and more directly from Brush Tip Studio.
-          </p>
-          <a href="#" class="btn-light reveal reveal-delay-3" onclick="showPage('contact')">Get Notified</a>
-        </div>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;" class="reveal reveal-delay-2">
-          <div
-            style="background:rgba(255,245,250,0.05); border:1px solid rgba(169,150,158,0.2); border-radius:2px; padding:24px; text-align:center;">
-            <p style="font-size:2rem; margin-bottom:8px;">🛍️</p>
-            <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(255,245,250,0.6);">Gift Vouchers
-            </p>
-          </div>
-          <div
-            style="background:rgba(255,245,250,0.05); border:1px solid rgba(169,150,158,0.2); border-radius:2px; padding:24px; text-align:center;">
-            <p style="font-size:2rem; margin-bottom:8px;">💄</p>
-            <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(255,245,250,0.6);">Nail Products
-            </p>
-          </div>
-          <div
-            style="background:rgba(255,245,250,0.05); border:1px solid rgba(169,150,158,0.2); border-radius:2px; padding:24px; text-align:center;">
-            <p style="font-size:2rem; margin-bottom:8px;">🎁</p>
-            <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(255,245,250,0.6);">Bundles</p>
-          </div>
-          <div
-            style="background:rgba(255,245,250,0.05); border:1px solid rgba(169,150,158,0.2); border-radius:2px; padding:24px; text-align:center;">
-            <p style="font-size:2rem; margin-bottom:8px;">✨</p>
-            <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(255,245,250,0.6);">Nail Art Kits
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
   </div><!-- end services -->
 
   <!-- ══════════════════════════════════
@@ -2502,7 +2468,7 @@
             <h3 class="info-card-title">Booking Policy</h3>
             <p class="info-card-body">A <strong>50% deposit</strong> is required to confirm your appointment.
               Cancellations with less than 24 hours notice may forfeit the deposit. Please arrive on time.</p>
-            <a href="#" onclick="showPage('policies')"
+            <a href="#" onclick="return showPage('policies')"
               style="font-size:0.75rem; color:var(--mauve); text-decoration:none; display:inline-block; margin-top:10px; letter-spacing:0.1em">View
               Full Client Policies →</a>
           </div>
@@ -2651,11 +2617,11 @@
     </div>
     <p class="footer-copy">© 2026 Brush Tip Studio · Le-Ann Kurten<br>All rights reserved.</p>
     <div class="footer-links">
-      <a href="#" onclick="showPage('about')">About</a>
-      <a href="#" onclick="showPage('services')">Services</a>
-      <a href="#" onclick="showPage('portfolio')">Portfolio</a>
+      <a href="#" onclick="return showPage('about')">About</a>
+      <a href="#" onclick="return showPage('services')">Services</a>
+      <a href="#" onclick="return showPage('portfolio')">Portfolio</a>
       <a href="https://fresha.com/p/le-ann-kurtenleann80-gmail-com-6273021" target="_blank">Book</a>
-      <a href="#" onclick="showPage('policies')">Policies</a>
+      <a href="#" onclick="return showPage('policies')">Policies</a>
     </div>
   </footer>
 
@@ -2673,14 +2639,20 @@
 
     // ─── PAGE NAVIGATION ───
     function showPage(pageId) {
+      // hide all pages
       document.querySelectorAll('.page-section').forEach(el => el.classList.remove('active'));
+      // show the target page
       const target = document.getElementById(pageId);
       if (target) {
         target.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        // force-reveal all elements in the target section
+        // force-reveal all elements so they're never invisible
         target.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
       }
+      // instant scroll to top — no smooth delay
+      window.scrollTo(0, 0);
+      // close mobile menu if open
+      document.getElementById('hamburger').classList.remove('open');
+      document.getElementById('mobileMenu').classList.remove('open');
       // update nav active states
       document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
         a.classList.toggle('active', a.dataset.page === pageId);
